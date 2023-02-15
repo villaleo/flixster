@@ -24,14 +24,8 @@ class MovieTVCell: UITableViewCell {
     func configure(with movie: Movie) {
         self.movieTitleLabel.text = movie.title
         self.movieOverviewLabel.text = movie.overview
+        
         let url = mediaDomainURL + MovieMediaSize.W500.rawValue + movie.posterPath
-        if let url: URL = .init(string: url) {
-            let pipeline: ImagePipeline = .init()
-            _ = pipeline.loadImage(with: url, completion: { result in
-                self.moviePosterIView.image = try! result.get().image
-            })
-        } else {
-            fatalError("Could not fetch the image at \(url)")
-        }
+        ImagePipeline.fetchImage(from: url, into: &self.moviePosterIView)
     }
 }

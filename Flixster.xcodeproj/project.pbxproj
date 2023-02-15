@@ -18,6 +18,7 @@
 		528E5363299C51910046B41B /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E5362299C51910046B41B /* KeyManager.swift */; };
 		528E5365299C5AC20046B41B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E5364299C5AC20046B41B /* Movie.swift */; };
 		52C3022D299C8FDD00BE0DC8 /* MovieDetailsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3022C299C8FDD00BE0DC8 /* MovieDetailsVController.swift */; };
+		52C30231299DA5D000BE0DC8 /* ImagePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C30230299DA5D000BE0DC8 /* ImagePipeline.swift */; };
 		52E5B441299C743100E2D48A /* MovieTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5B440299C743100E2D48A /* MovieTVCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		528E5364299C5AC20046B41B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		52C3022B299C7F1700BE0DC8 /* Flixster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3022C299C8FDD00BE0DC8 /* MovieDetailsVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVController.swift; sourceTree = "<group>"; };
+		52C30230299DA5D000BE0DC8 /* ImagePipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePipeline.swift; sourceTree = "<group>"; };
 		52E5B440299C743100E2D48A /* MovieTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				528E534A299C4A620046B41B /* AppDelegate.swift */,
 				528E534C299C4A620046B41B /* SceneDelegate.swift */,
 				528E534E299C4A620046B41B /* ViewController.swift */,
+				52C30230299DA5D000BE0DC8 /* ImagePipeline.swift */,
 				52E5B440299C743100E2D48A /* MovieTVCell.swift */,
 				528E5364299C5AC20046B41B /* Movie.swift */,
 				528E5362299C51910046B41B /* KeyManager.swift */,
@@ -169,6 +172,7 @@
 				528E5363299C51910046B41B /* KeyManager.swift in Sources */,
 				528E5365299C5AC20046B41B /* Movie.swift in Sources */,
 				52C3022D299C8FDD00BE0DC8 /* MovieDetailsVController.swift in Sources */,
+				52C30231299DA5D000BE0DC8 /* ImagePipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

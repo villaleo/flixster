@@ -19,17 +19,11 @@ class MovieDetailsVController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = movie.title
-        let url = mediaDomainURL + MovieMediaSize.W500.rawValue + movie.backdropPath
-        if let url: URL = .init(string: url) {
-            let pipeline: ImagePipeline = .init()
-            _ = pipeline.loadImage(with: url, completion: { result in
-                self.movieBackdropIView.image = try! result.get().image
-            })
-        } else {
-            fatalError("Could not fetch the image at \(url)")
-        }
         self.movieVoteAverageLabel.text = String(movie.voteAverage)
         self.movieVotesLabel.text = String(movie.voteCount)
         self.moviePopularityLabel.text = String(movie.popularity)
+        
+        let url = mediaDomainURL + MovieMediaSize.W500.rawValue + movie.backdropPath
+        ImagePipeline.fetchImage(from: url, into: &self.movieBackdropIView)
     }
 }
