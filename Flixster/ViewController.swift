@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var movieTView: UITableView!
     var movies: [Movie] = []
-    let movieAPIKey: String? = KeyManager.instance.map["movieAPI"] as? String
+    let movieAPIKey: String? = nil
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
