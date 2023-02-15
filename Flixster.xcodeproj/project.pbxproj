@@ -13,6 +13,8 @@
 		528E5352299C4A620046B41B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528E5350299C4A620046B41B /* Main.storyboard */; };
 		528E5354299C4A620046B41B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528E5353299C4A620046B41B /* Assets.xcassets */; };
 		528E5357299C4A620046B41B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528E5355299C4A620046B41B /* LaunchScreen.storyboard */; };
+		528E5361299C4C260046B41B /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528E5360299C4C260046B41B /* Secrets.plist */; };
+		528E5363299C51910046B41B /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E5362299C51910046B41B /* KeyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		528E5353299C4A620046B41B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528E5356299C4A620046B41B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528E5358299C4A620046B41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528E5360299C4C260046B41B /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		528E5362299C51910046B41B /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				528E534A299C4A620046B41B /* AppDelegate.swift */,
 				528E534C299C4A620046B41B /* SceneDelegate.swift */,
 				528E534E299C4A620046B41B /* ViewController.swift */,
+				528E5362299C51910046B41B /* KeyManager.swift */,
 				528E5350299C4A620046B41B /* Main.storyboard */,
 				528E5353299C4A620046B41B /* Assets.xcassets */,
 				528E5355299C4A620046B41B /* LaunchScreen.storyboard */,
 				528E5358299C4A620046B41B /* Info.plist */,
+				528E5360299C4C260046B41B /* Secrets.plist */,
 			);
 			path = Flixster;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528E5361299C4C260046B41B /* Secrets.plist in Resources */,
 				528E5357299C4A620046B41B /* LaunchScreen.storyboard in Resources */,
 				528E5354299C4A620046B41B /* Assets.xcassets in Resources */,
 				528E5352299C4A620046B41B /* Main.storyboard in Resources */,
@@ -141,6 +148,7 @@
 				528E534F299C4A620046B41B /* ViewController.swift in Sources */,
 				528E534B299C4A620046B41B /* AppDelegate.swift in Sources */,
 				528E534D299C4A620046B41B /* SceneDelegate.swift in Sources */,
+				528E5363299C51910046B41B /* KeyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

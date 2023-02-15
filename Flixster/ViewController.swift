@@ -8,12 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let movieAPIKey: String? = KeyManager.instance.map["movieAPI"] as? String
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
