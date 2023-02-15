@@ -27,4 +27,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.movies = Movie.mockData
         self.movieTView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell,
+            let index = movieTView.indexPath(for: cell),
+            let details = segue.destination as? MovieDetailsVController
+        {
+            let movie = movies[index.row]
+            details.movie = movie
+        }
+    }
 }
