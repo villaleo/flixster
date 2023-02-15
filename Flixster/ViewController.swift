@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieTView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTVCell
-        // TODO: Configure cell
+        cell.configure(with: movies[indexPath.row])
         return cell
     }
     
