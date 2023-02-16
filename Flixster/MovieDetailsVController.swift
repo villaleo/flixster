@@ -13,6 +13,7 @@ class MovieDetailsVController: UIViewController {
     @IBOutlet weak var movieVoteAverageLabel: UILabel!
     @IBOutlet weak var movieVotesLabel: UILabel!
     @IBOutlet weak var moviePopularityLabel: UILabel!
+    @IBOutlet weak var movieOverviewLabel: UILabel!
     
     var movie: Movie!
     
@@ -22,8 +23,9 @@ class MovieDetailsVController: UIViewController {
         self.movieVoteAverageLabel.text = String(movie.voteAverage)
         self.movieVotesLabel.text = String(movie.voteCount)
         self.moviePopularityLabel.text = String(movie.popularity)
+        self.movieOverviewLabel.text = movie.overview
         
-        let url = mediaDomainURL + MovieMediaSize.W500.rawValue + movie.backdropPath
+        let url = mediaDomainURL + MovieMediaSize.Original.rawValue + movie.backdropPath
         ImagePipeline.fetchImage(from: url, into: &self.movieBackdropIView)
     }
 }
