@@ -17,6 +17,7 @@ class MovieDetailsVController: UIViewController {
     
     var movie: Movie!
     
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = movie.title

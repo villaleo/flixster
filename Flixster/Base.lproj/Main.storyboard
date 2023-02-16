@@ -57,10 +57,9 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.65288136159999999" green="0.85764277450000004" blue="0.92743234539999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.65288136159999999" green="0.85764277450000004" blue="0.92743234539999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" red="0.59215686270000001" green="0.86666666670000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="7Hf-bw-8Hr" firstAttribute="leading" secondItem="hBC-r2-7by" secondAttribute="leading" constant="15" id="Kes-x5-evX"/>
                                                 <constraint firstAttribute="trailing" secondItem="7Hf-bw-8Hr" secondAttribute="trailing" constant="15" id="R9B-w1-9zM"/>
@@ -68,7 +67,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="7Hf-bw-8Hr" secondAttribute="bottom" constant="15" id="wGz-ck-LhU"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.65288136159999999" green="0.85764277450000004" blue="0.92743234539999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="movieOverviewLabel" destination="98i-QV-qMe" id="eeD-Ut-6qv"/>

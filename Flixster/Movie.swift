@@ -25,7 +25,6 @@ enum MovieMediaSize: String {
 }
 
 let mediaDomainURL: String = "https://image.tmdb.org/t/p/"
-// Media URL => mediaDomainURL + MovieMediaSize + poserPath
 extension Movie {
     // MARK: Mock data
     static var mockData: [Movie] = [

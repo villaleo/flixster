@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     var movies: [Movie] = []
     let movieAPIKey: String? = nil
     
+    // MARK: Conform to UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    // MARK: Overrides    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.movies = Movie.mockData
