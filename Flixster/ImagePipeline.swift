@@ -13,8 +13,7 @@ extension ImagePipeline {
     /// Attempts to load the image resource from the URL into the UIImageView.
     static func fetchImage(from url: String, into imageView: inout UIImageView) {
         if let url = URL(string: url) {
-            let pipeline: Nuke.ImagePipeline = .init()
-            _ = pipeline.loadImage(with: url, completion: { [imageView] result in
+            Nuke.ImagePipeline().loadImage(with: url, completion: { [imageView] result in
                 imageView.image = try! result.get().image
             })
         } else {
