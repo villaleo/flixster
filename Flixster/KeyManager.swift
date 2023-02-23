@@ -9,9 +9,11 @@ import Foundation
 
 class KeyManager {
     static let shared = KeyManager()
-    var map: NSDictionary
+    
     private let fileName: String = "Secrets"
     private let fileExtension: String = "plist"
+    private var keyNameInPListFile: String = "Key"
+    private var map: NSDictionary
     
     private init() {
         if let path = Bundle.main.path(forResource: self.fileName, ofType: self.fileExtension) {
@@ -20,5 +22,12 @@ class KeyManager {
             let file = "\(fileName).\(fileExtension)"
             fatalError("Could not find '\(file)'. This file is needed for the MovieDB API key.")
         }
+    }
+    
+    /// Returns the API key for the MovieDB.org
+    /// If key is not found, an empty String will be returned.
+    func getMovieAPIKey() -> String {
+        guard let key = map[keyNameInPListFile] as? String else { return "" }
+        return key
     }
 }

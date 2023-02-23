@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var movieTView: UITableView!
     var movies: [Movie] = []
-    let movieAPIKey: String? = KeyManager.shared.map["APIKey"] as? String
+    let movieAPIKey: String = KeyManager.shared.getMovieAPIKey()
     
     // MARK: Overrides    
     override func viewDidLoad() {

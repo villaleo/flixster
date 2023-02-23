@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct NowPlayingResponse: Decodable {
+    
+}
+
 struct Movie {
     var title: String
     var overview: String
