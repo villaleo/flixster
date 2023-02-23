@@ -7,21 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     @IBOutlet weak var movieTView: UITableView!
     var movies: [Movie] = []
-    let movieAPIKey: String? = nil
-    
-    // MARK: Conform to UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = movieTView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTVCell
-        cell.configure(with: movies[indexPath.row])
-        return cell
-    }
+    let movieAPIKey: String? = KeyManager.shared.map["APIKey"] as? String
     
     // MARK: Overrides    
     override func viewDidLoad() {
@@ -38,5 +27,18 @@ class ViewController: UIViewController, UITableViewDataSource {
             let movie = movies[index.row]
             details.movie = movie
         }
+    }
+}
+
+// MARK: Conform to UITableViewDataSource
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = movieTView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTVCell
+        cell.configure(with: movies[indexPath.row])
+        return cell
     }
 }

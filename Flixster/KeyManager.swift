@@ -8,7 +8,7 @@
 import Foundation
 
 class KeyManager {
-    static let instance = KeyManager()
+    static let shared = KeyManager()
     var map: NSDictionary
     private let fileName: String = "Secrets"
     private let fileExtension: String = "plist"
