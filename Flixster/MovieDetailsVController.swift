@@ -20,7 +20,7 @@ class MovieDetailsVController: UIViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = movie.title
+        self.navigationItem.title = movie.originalTitle
         self.movieVoteAverageLabel.text = String(movie.voteAverage)
         self.movieVotesLabel.text = String(movie.voteCount)
         self.moviePopularityLabel.text = String(movie.popularity)

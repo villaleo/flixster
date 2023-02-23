@@ -15,7 +15,29 @@ class ViewController: UIViewController {
     // MARK: Overrides    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.movies = Movie.mockData
+        
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=" + movieAPIKey)
+        let request = URLRequest(url: url!)
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+            if let error = error {
+                fatalError("Network error: \(error.localizedDescription)")
+            }
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let response = try decoder.decode(NowPlayingResponse.self, from: data)
+                DispatchQueue.main.async {
+                    self?.movies = response.results
+                    self?.movieTView.reloadData()
+                }
+            } catch {
+                fatalError("Parse error: \(error.localizedDescription)")
+            }
+        }
+        
+        task.resume()
         self.movieTView.dataSource = self
     }
     

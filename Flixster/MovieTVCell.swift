@@ -14,7 +14,7 @@ class MovieTVCell: UITableViewCell {
     @IBOutlet weak var movieOverviewLabel: UILabel!
     
     func configure(with movie: Movie) {
-        self.movieTitleLabel.text = movie.title
+        self.movieTitleLabel.text = movie.originalTitle
         self.movieOverviewLabel.text = movie.overview
         
         let url = mediaDomainURL + MovieMediaSize.W500.rawValue + movie.posterPath
