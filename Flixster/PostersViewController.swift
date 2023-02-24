@@ -10,7 +10,7 @@ import Nuke
 
 class PostersViewController: UIViewController {
     @IBOutlet weak var postersCollectionView: UICollectionView!
-    var posters: [Poster] = []
+    var posters: [Movie] = []
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class PostersViewController: UIViewController {
         
         let key = KeyManager.shared.getMovieAPIKey()
         let url = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + key
-        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: PostersResponse) in
+        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: NowPlayingResponse) in
             self?.posters = response.results
             self?.postersCollectionView.reloadData()
         }
@@ -30,8 +30,8 @@ class PostersViewController: UIViewController {
     // MARK: Private helpers
     private func updateCollectionViewLayout() {
         let layout = postersCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 4
-        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
         let numberOfColumns: CGFloat = 3
         let width = (
             postersCollectionView.bounds.width - layout.minimumInteritemSpacing * (numberOfColumns - 1)

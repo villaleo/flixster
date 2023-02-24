@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,23 +109,24 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-aC-wSv">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.59215686270000001" green="0.86666666670000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wtb-iH-5o9">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="144" height="151"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PosterCell" id="dE4-Wf-HFk" customClass="PosterCollectionViewCell" customModule="Flixster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="151"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y53-38-coc">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-6r-hqu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="151"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -136,6 +136,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="hDf-6r-hqu" secondAttribute="trailing" id="dnB-hx-MsR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="144" height="151"/>
                                         <connections>
                                             <outlet property="posterImageView" destination="hDf-6r-hqu" id="Mog-gb-plw"/>
                                         </connections>
@@ -152,7 +153,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="iaA-aC-wSv" secondAttribute="bottom" id="oY3-pE-VBO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kww-HQ-ccC"/>
+                    <navigationItem key="navigationItem" title="Movie Posters" id="Kww-HQ-ccC"/>
                     <connections>
                         <outlet property="postersCollectionView" destination="iaA-aC-wSv" id="xlS-vW-sOY"/>
                     </connections>
@@ -261,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLS-b3-mfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838.9312977099235" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="2906" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iv6-LK-B3I">
@@ -327,8 +328,5 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
