@@ -1,37 +1,25 @@
-# Project 2 - *Flixster*
+# Project 3 - *Flixster*
 
 Submitted by: **Leonardo Villalobos**
 
-**Flixster** is a movie browsing app that shows a few movies that are now playing. 
+**Flixster** is an app that uses the MovieDB API to load movie data for movies that are currently showing.
 
-Time spent: **6** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
-
-- [X] Users are able to see a customized app icon and launch screen
-- [ ] Your app should work for any screen size and orientation using AutoLayout constraints
-- [X] Displays at least 5 different movies in a table view
-- [X] Can tap into detail view of movie with a full description, backdrop image, and title
+- [X] Implement network call and table view to display a list of movies currently playing (title, description, image)
+- [X] App has a collection view with the same list of movies
+- [X] Uses a tab bar controller to switch between collection view and table view screens
  
 The following **optional** features are implemented:
-
-- [X] Unique UI changes, such as background, font/color changes, etc.
-- [ ] User implements a collection view
-- [X] User implemenets tab bar controller with at least two screens
+- [ ] Make an additional network call to another end-point.	
+- [X] Allow users to scroll when context items are off-screen (table view implemention)
 
 ## Video Walkthrough
-
 Here's a walkthrough of implemented user stories:
-
 ![](assets/img/demo.gif)
-
-GIF created with Simulator app on MacOS. GIF hosted by Imgur [here](https://imgur.com/a/uBau4RD).
-
-## Notes
-
-During the development of this application, I had small issues with using a TextView to display the movie overview with constraints, so intead I used a Label.
 
 ## License
 
