@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + movieAPIKey
-        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) {
-            [weak self] (response: NowPlayingResponse) in
+        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: NowPlayingResponse) in
                 self?.movies = response.results
                 self?.movieTView.reloadData()
         }
@@ -37,17 +36,11 @@ class ViewController: UIViewController {
 
 // MARK: Conform to UITableViewDataSource
 extension ViewController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieTView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
             as! MovieTVCell
         cell.configure(with: movies[indexPath.row])
