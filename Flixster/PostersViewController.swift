@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import Nuke
 
 class PostersViewController: UIViewController {
     @IBOutlet weak var postersCollectionView: UICollectionView!
+    var posters: [Poster] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postersCollectionView.dataSource = self
+        let key = KeyManager.shared.getMovieAPIKey()
+        let url = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + key
+        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: PostersResponse) in
+            self?.posters = response.results
+            self?.postersCollectionView.reloadData()
+        }
+        
+        self.postersCollectionView.dataSource = self
         self.updateCollectionViewLayout()
     }
     
@@ -32,12 +41,18 @@ class PostersViewController: UIViewController {
 
 extension PostersViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: Implement
-        return .zero
+        return posters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: Implement
-        return .init()
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: PosterCollectionViewCell.identifier,
+            for: indexPath
+        ) as! PosterCollectionViewCell
+        let poster = posters[indexPath.item]
+        
+        let imageURL = mediaDomainURL + MovieMediaSize.W500.rawValue + poster.posterPath
+        ImagePipeline.fetchImage(from: imageURL, into: &cell.posterImageView)
+        return cell
     }
 }
