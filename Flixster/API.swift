@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Decodes the response from the url into a `Decodable` structure.
+/// Escaping closure is executed asynchronously on the main thread.
 func decodeAPIResponseAndHandleResponse<T>(with url: URL, andCall fn: @escaping (_ response: T) -> Void) throws
 where T: Decodable
 {

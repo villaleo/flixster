@@ -12,6 +12,7 @@ class PostersViewController: UIViewController {
     @IBOutlet weak var postersCollectionView: UICollectionView!
     var posters: [Poster] = []
     
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +40,7 @@ class PostersViewController: UIViewController {
     }
 }
 
+// MARK: Conform PostersViewController to UICollectionViewDataSource
 extension PostersViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posters.count
