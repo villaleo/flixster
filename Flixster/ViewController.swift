@@ -16,28 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=" + movieAPIKey)
-        let request = URLRequest(url: url!)
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
-            if let error = error {
-                fatalError("Network error: \(error.localizedDescription)")
-            }
-            guard let data = data else { return }
-            
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                let response = try decoder.decode(NowPlayingResponse.self, from: data)
-                DispatchQueue.main.async {
-                    self?.movies = response.results
-                    self?.movieTView.reloadData()
-                }
-            } catch {
-                fatalError("Parse error: \(error.localizedDescription)")
-            }
+        let url = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + movieAPIKey
+        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: NowPlayingResponse) in
+            self?.movies = response.results
+            self?.movieTView.reloadData()
         }
-        
-        task.resume()
         self.movieTView.dataSource = self
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5238744329A809EC004B7FA8 /* PostersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238744229A809EC004B7FA8 /* PostersViewController.swift */; };
+		5238744729A81707004B7FA8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238744629A81707004B7FA8 /* API.swift */; };
 		5257E723299C7EBA0069AE40 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 5257E722299C7EBA0069AE40 /* Nuke */; };
 		528E534B299C4A620046B41B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E534A299C4A620046B41B /* AppDelegate.swift */; };
 		528E534D299C4A620046B41B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E534C299C4A620046B41B /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		5238744229A809EC004B7FA8 /* PostersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostersViewController.swift; sourceTree = "<group>"; };
+		5238744629A81707004B7FA8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		528E534A299C4A620046B41B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528E534C299C4A620046B41B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		528E534E299C4A620046B41B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				52E5B440299C743100E2D48A /* MovieTVCell.swift */,
 				528E5364299C5AC20046B41B /* Movie.swift */,
 				528E5362299C51910046B41B /* KeyManager.swift */,
+				5238744629A81707004B7FA8 /* API.swift */,
 				528E5350299C4A620046B41B /* Main.storyboard */,
 				5238744229A809EC004B7FA8 /* PostersViewController.swift */,
 				52C3022C299C8FDD00BE0DC8 /* MovieDetailsVController.swift */,
@@ -172,6 +175,7 @@
 				528E534B299C4A620046B41B /* AppDelegate.swift in Sources */,
 				52E5B441299C743100E2D48A /* MovieTVCell.swift in Sources */,
 				528E534D299C4A620046B41B /* SceneDelegate.swift in Sources */,
+				5238744729A81707004B7FA8 /* API.swift in Sources */,
 				528E5363299C51910046B41B /* KeyManager.swift in Sources */,
 				528E5365299C5AC20046B41B /* Movie.swift in Sources */,
 				52C3022D299C8FDD00BE0DC8 /* MovieDetailsVController.swift in Sources */,
