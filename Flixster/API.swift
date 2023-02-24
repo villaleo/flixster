@@ -9,9 +9,10 @@ import Foundation
 
 /// Decodes the response from the url into a `Decodable` structure.
 /// Escaping closure is executed asynchronously on the main thread.
-func decodeAPIResponseAndHandleResponse<T>(with url: URL, andCall fn: @escaping (_ response: T) -> Void) throws
-where T: Decodable
-{
+func decodeAPIResponseAndHandleResponse<R>(
+    with url: URL,
+    andCall fn: @escaping (_ response: R) -> Void
+) throws where R: Decodable {
     let request = URLRequest(url: url)
     let task = URLSession.shared.dataTask(with: request) { data, _, error in
         if let error = error {
@@ -22,12 +23,11 @@ where T: Decodable
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
-            let response = try decoder.decode(T.self, from: data)
+            let response = try decoder.decode(R.self, from: data)
             DispatchQueue.main.async { fn(response) }
         } catch {
             fatalError("Parse error: \(error.localizedDescription)")
         }
     }
-    
     task.resume()
 }

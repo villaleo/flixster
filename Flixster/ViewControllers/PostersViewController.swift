@@ -18,13 +18,24 @@ class PostersViewController: UIViewController {
         
         let key = KeyManager.shared.getMovieAPIKey()
         let url = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + key
-        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) { [weak self] (response: NowPlayingResponse) in
-            self?.posters = response.results
-            self?.postersCollectionView.reloadData()
+        try! decodeAPIResponseAndHandleResponse(with: URL(string: url)!) {
+            [weak self] (response: NowPlayingResponse) in
+                self?.posters = response.results
+                self?.postersCollectionView.reloadData()
         }
         
         self.postersCollectionView.dataSource = self
         self.updateCollectionViewLayout()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell,
+            let index = postersCollectionView.indexPath(for: cell),
+            let details = segue.destination as? MovieDetailsVController
+        {
+            let poster = posters[index.row]
+            details.movie = poster
+        }
     }
     
     // MARK: Private helpers
@@ -42,17 +53,22 @@ class PostersViewController: UIViewController {
 
 // MARK: Conform PostersViewController to UICollectionViewDataSource
 extension PostersViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return posters.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PosterCollectionViewCell.identifier,
             for: indexPath
         ) as! PosterCollectionViewCell
         let poster = posters[indexPath.item]
-        
         let imageURL = mediaDomainURL + MovieMediaSize.W500.rawValue + poster.posterPath
         ImagePipeline.fetchImage(from: imageURL, into: &cell.posterImageView)
         return cell

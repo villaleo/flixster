@@ -139,6 +139,7 @@
                                         <size key="customSize" width="144" height="151"/>
                                         <connections>
                                             <outlet property="posterImageView" destination="hDf-6r-hqu" id="Mog-gb-plw"/>
+                                            <segue destination="yAR-ui-a1v" kind="show" id="W4M-k5-V8k"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -322,6 +323,9 @@
             <point key="canvasLocation" x="960" y="764"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W4M-k5-V8k"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="square.grid.3x3.fill" catalog="system" width="128" height="113"/>
